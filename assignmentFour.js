@@ -13,8 +13,6 @@ function radianToDegree( radian ) {
     return radianToDegreeResult.toFixed(2);
 }
 
-// console.log( radianToDegree( 25 ) );
-
 
 
 
@@ -36,8 +34,6 @@ function isJavaScriptFile( fileName ) {
         return false;
     }
 }
-
-// console.log( isJavaScriptFile( "image.jpg.js" ) );
 
 
 
@@ -66,8 +62,6 @@ function oilPrice( dieselQuantity, petrolQuantity, octaneQuantity ) {
 
     return totalPrice;
 }
-
-// console.log( oilPrice( 1, 0, 2 ) );
 
 
 
@@ -106,4 +100,25 @@ function publicBusFare( peoplesGoing ) {
     return totalPriceOfPublicBusTicket;
 }
 
-console.log(publicBusFare( 365 ));
+
+
+
+
+/*
+    1. The function name should be isBestFriend
+    2. The function will have 2 perameters and perameters value will be 2 objects.
+    3. If the 2 perameters object friends properties value are same then return true, otherwise return false.
+*/
+
+function isBestFriend( personOne, personTwo ) {
+
+    if ( typeof personOne !== 'object' || typeof personTwo !== 'object' ) {
+        return "Please enter two valid object as perameters.";
+    }
+
+    if ( (personOne.name === personTwo.friend) && (personTwo.name === personOne.friend) ) {
+        return true;
+    } else {
+        return false;
+    }
+}
