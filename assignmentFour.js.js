@@ -13,4 +13,26 @@ function radianToDegree( radian ) {
     return radianToDegreeResult.toFixed(2);
 }
 
-console.log( radianToDegree( 25 ) );
+// console.log( radianToDegree( 25 ) );
+
+
+
+/*
+    1. The function name will be exact isJavaScriptFile
+    2. The function perameter will be a string of a file name.
+    3. The function will return true if that is a Javascript file. Otherwise, return false.
+ */
+
+    function isJavaScriptFile( fileName ) {
+        if ( typeof fileName !== 'string' ) {
+            return "Please enter a valid file name!";
+        }
+
+        if ( fileName.endsWith( '.js' ) ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    // console.log( isJavaScriptFile( "image.jpg.js" ) );
