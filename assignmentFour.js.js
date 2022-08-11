@@ -17,6 +17,8 @@ function radianToDegree( radian ) {
 
 
 
+
+
 /*
     1. The function name will be exact isJavaScriptFile
     2. The function perameter will be a string of a file name.
@@ -36,6 +38,9 @@ function isJavaScriptFile( fileName ) {
 }
 
 // console.log( isJavaScriptFile( "image.jpg.js" ) );
+
+
+
 
 
 /*
@@ -63,3 +68,42 @@ function oilPrice( dieselQuantity, petrolQuantity, octaneQuantity ) {
 }
 
 // console.log( oilPrice( 1, 0, 2 ) );
+
+
+
+
+
+/*
+    1. The function name most be publicBusFare
+    2. The bus and cars quantity will depends on how many people are going.
+    3. A private bus will go if 50 peoples are there. No more than 50 and no less than 50 people.
+    4. And a private car will go if 11 peoples are there. No more than 11 and no less than 11 people.
+    5. The rest have to go by public bus. And a public bus ticket price will be 250tk.
+    6. The function will return the ticket cost of people going on public buses.
+
+*/
+
+function publicBusFare( peoplesGoing ) {
+
+    if ( typeof peoplesGoing !== 'number' ) {
+        return "Please enter a valid number of people.";
+    }
+
+    const publicBusTicketPrice = 250;
+    let totalPriceOfPublicBusTicket = 0;
+    let restPeopleWantToGo = peoplesGoing;
+    if ( restPeopleWantToGo >= 50 ) {
+        let privateBusNeed = Math.floor( restPeopleWantToGo / 50 );
+        restPeopleWantToGo -= privateBusNeed * 50;
+    }
+
+    if( restPeopleWantToGo >= 11 ) {
+        let privateCarNeed = Math.floor( restPeopleWantToGo / 11 );
+        restPeopleWantToGo -= privateCarNeed * 11;
+    }
+
+    totalPriceOfPublicBusTicket = restPeopleWantToGo * publicBusTicketPrice;
+    return totalPriceOfPublicBusTicket;
+}
+
+console.log(publicBusFare( 365 ));
